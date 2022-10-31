@@ -6,8 +6,6 @@ export default function Home() {
     <>
       <Layout title='GuitarLA - Front page'>
         <h1>Hello, World! (In NextJS)</h1>
-
-        <Link href="/aboutus">About us</Link>
       </Layout>
     </>
   )
