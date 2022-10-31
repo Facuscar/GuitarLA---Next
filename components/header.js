@@ -6,7 +6,7 @@ import styles from "../styles/header.module.css"
 const Header = () => {
     	return (
             <header className={styles.header}>
-                <div className="container">
+                <div className={`container ${styles.items}`}>
                     <Image src={logo.src} alt='Logo of guitarLA in white and gold' width={300} height={40} />
 
                     <nav className={styles.nav}>
