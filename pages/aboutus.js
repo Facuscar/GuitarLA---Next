@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Layout from "../components/layout";
 
 const AboutUs = () => {
     return (
-        <Link href="/">Front page</Link>
+        <Layout >
+            <Link href="/">Front page</Link>
+        </Layout>
     )
 }
 

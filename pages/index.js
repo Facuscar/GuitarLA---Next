@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello, World! (In NextJS)</h1>
+      <Layout>
+        <h1>Hello, World! (In NextJS)</h1>
 
-      <Link href="/aboutus">About us</Link>
+        <Link href="/aboutus">About us</Link>
+      </Layout>
     </>
   )
 }
