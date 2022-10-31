@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 const AboutUs = () => {
     return (
-        <Layout >
+        <Layout title="GuitarLA - About us" description="GuitarLA - Information about our store and more">
             <Link href="/">Front page</Link>
         </Layout>
     )

@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 export default function Home() {
   return (
     <>
-      <Layout>
+      <Layout title='GuitarLA - Front page'>
         <h1>Hello, World! (In NextJS)</h1>
 
         <Link href="/aboutus">About us</Link>
