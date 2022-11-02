@@ -10,7 +10,7 @@ const Header = () => {
 
     	return (
             <header className={styles.header}>
-                <div className={`${styles.container} ${styles.items}`}>
+                <div className={`container ${styles.items}`}>
                     <Link href="/">
                         <Image src={logo.src} alt='Logo of guitarLA in white and gold' width={300} height={40} />
                     </Link>
