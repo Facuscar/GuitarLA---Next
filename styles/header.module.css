@@ -31,9 +31,11 @@
     padding: .5rem;
     transition-property: background-color;
     transition-duration: 300ms;
+    border-radius: 5px;
+    margin-right: 2rem;
 }
 
-.nav a:hover {
+.nav a:hover, .nav a.active {
     background-color: var(--primary);
 }
 
@@ -43,3 +45,7 @@
     }
 }
 
+.container { 
+    max-width: 120rem;
+    margin: 0 auto;
+}

@@ -7,7 +7,7 @@ const Layout = ({children, title = 'GuitarLA', description = 'GuitarLA - Guitar 
         <>
             <Head>
                 <title>{title}</title>
-                <description>{description}</description>
+                <meta name="description" content={description}/>
             </Head>
             <Header />
             {children}
