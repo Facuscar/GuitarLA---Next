@@ -22,7 +22,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-[class*="contenedor"], 
+[class*="container"], 
 main {
   width: min(95%, 120rem);
   margin: 3rem auto;
@@ -33,9 +33,4 @@ main {
   font-weight: 900;
   color: var(--primary);
   margin: 5rem 0;
-}
-
-.container { 
-  max-width: 120rem;
-  margin: 0 auto;
 }
