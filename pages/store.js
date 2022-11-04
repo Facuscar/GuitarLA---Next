@@ -7,13 +7,12 @@ export const getStaticProps = async () => {
 
     return {
         props: {
-            guitars: result
+            guitars: result.data
         }
     }
 }
 
 const Store = ({guitars}) => {
-    
     return (
         <Layout title="GuitarLA - Store" description="GuitarLA - Information about our store and more">
             <main className="container">

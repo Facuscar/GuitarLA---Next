@@ -1,7 +1,13 @@
-const GuitarList = () => {
+import Guitar from "./guitar";
+
+const GuitarList = ({guitars}) => {
     return (
-        <h1>From GuitarList</h1>
+        <>
+            {guitars?.map( guitar => (
+                <Guitar guitar={guitar.attributes} key={guitar.id} />
+            ))}
+        </>
     );
 }
 
-export default GuitarList
+export default GuitarList;
