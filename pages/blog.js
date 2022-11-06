@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import Post from "../components/post";
+import styles from "../styles/grid.module.css";
 
 export const getStaticProps = async () => {
     const response = await fetch(`${process.env.API_URL}blogs?populate=image`);
@@ -18,7 +19,7 @@ const Blog = ({posts}) => {
         <Layout title="GuitarLA -Blog" description="GuitarLA - Blog about guitars, music and courses">
             <main className="container">
                 <h1 className="heading">Blog</h1>
-                <div>
+                <div className={styles.grid}>
                     {posts?.map(post => (
                         <Post key={post.id} post={post.attributes} />
                     ))}
