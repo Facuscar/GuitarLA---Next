@@ -4,13 +4,18 @@ import styles from "../../styles/guitars.module.css";
 import Layout from "../../components/layout";
 
 export const getServerSideProps = async ({ query: { guitar } }) => {
-    console.log(guitar);
     const res = await fetch(`${process.env.API_URL}guitarras?filters[url]=${guitar}&populate=image`);
     const data = await res.json();
 
+    if(!data.data.length) {
+        return {
+            notFound: true,
+        };
+    }
+
     return {
         props: {
-           guitar: data.data
+           guitar: data.data,
         }
     };
 }
