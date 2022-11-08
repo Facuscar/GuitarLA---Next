@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Layout from "../components/layout";
-import styles from "../styles/grid.modules.css";
+import BlogList from "../components/blog-list";
+import GuitarList from "../components/guitar-list";
 
 export default function Home({guitars, posts}) {
   return (
@@ -8,9 +8,11 @@ export default function Home({guitars, posts}) {
       <Layout title="GuitarLA - Front page" description="Music blog, guitr store and more">
         <main className="container">
           <h1 className="heading">Our collection</h1>
-          <div className={styles.grid}>
-            
-          </div>
+          <GuitarList guitars={guitars}/>
+          <section className="container">
+            <h2 className="heading">Our blog</h2>
+            <BlogList posts={posts}/>
+          </section>
         </main>
       </Layout>
     </>
