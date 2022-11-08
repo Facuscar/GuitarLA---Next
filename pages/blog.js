@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import Post from "../components/post";
+import BlogList from "../components/blog-list";
 import styles from "../styles/grid.module.css";
 
 export const getStaticProps = async () => {
@@ -20,9 +20,7 @@ const Blog = ({posts}) => {
             <main className="container">
                 <h1 className="heading">Blog</h1>
                 <div className={styles.grid}>
-                    {posts?.map(post => (
-                        <Post key={post.id} post={post.attributes} />
-                    ))}
+                    <BlogList posts={posts} />
                 </div>
             </main>
         </Layout>
