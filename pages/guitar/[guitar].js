@@ -21,7 +21,7 @@ export const getServerSideProps = async ({ query: { guitar } }) => {
     };
 }
 
-const Guitar = ({ guitar }) => {
+const Guitar = ({ guitar, addToCart }) => {
     
     const amountRef = useRef();
 
@@ -43,6 +43,7 @@ const Guitar = ({ guitar }) => {
             amount: Number(amountRef.current.value),
         };
 
+        addToCart(selectedGuitar);
     }
 
     return (
