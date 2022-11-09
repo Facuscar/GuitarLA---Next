@@ -8,7 +8,7 @@ export const getServerSideProps = async ({ query: { guitar } }) => {
     const res = await fetch(`${process.env.API_URL}guitarras?filters[url]=${guitar}&populate=image`);
     const data = await res.json();
 
-    if(!data.data.length) {
+    if(!data?.data.length) {
         return {
             notFound: true,
         };
@@ -25,7 +25,7 @@ const Guitar = ({ guitar }) => {
     
     const amountRef = useRef();
 
-    const { name, description, image, price, id } = guitar[0].attributes;
+    const { name, description, image, price } = guitar[0].attributes;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,12 +36,13 @@ const Guitar = ({ guitar }) => {
         }
 
         const selectedGuitar = {
-            id,
+            id: guitar[0].id,
             image: image.data.attributes.url,
             name,
             price,
             amount: Number(amountRef.current.value),
         };
+
     }
 
     return (
