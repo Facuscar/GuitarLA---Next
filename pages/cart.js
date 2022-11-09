@@ -7,11 +7,11 @@ export const Cart = () => {
             <main className="container">
                 <h1 className="heading">Caart</h1>
 
-                <div>
-                    <div>
+                <div className={styles.content}>
+                    <div className={styles.cart}>
                         <h2>Articles</h2>
                     </div>
-                    <aside>
+                    <aside className={styles.resume}>
                         <h3>Purchase resume</h3>
                         <p>Total: </p>
                     </aside>
@@ -19,4 +19,6 @@ export const Cart = () => {
             </main>
         </Layout>
     );
-} 
+}
+
+export default Cart;
