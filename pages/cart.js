@@ -5,7 +5,7 @@ export const Cart = () => {
     return (
         <Layout title="GuitarLA - Shopping Cart">
             <main className="container">
-                <h1 className="heading">Caart</h1>
+                <h1 className="heading">Cart</h1>
 
                 <div className={styles.content}>
                     <div className={styles.cart}>

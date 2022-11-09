@@ -44,3 +44,41 @@
 .link:hover {
     background-color: var(--primary);
 }
+
+.form {
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+}
+
+.form label {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.form select {
+    border: 1px solid var(--black);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: var(--white);
+    margin-bottom: 2rem;
+}
+
+.form input[type="submit"] {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    padding: 1.4rem;
+    background-color: var(--black);
+    color: var(--white);
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+.form input[type="submit"]:hover {
+    background-color: var(--primary);
+    cursor: pointer;
+}
