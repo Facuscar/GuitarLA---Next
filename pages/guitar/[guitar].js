@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Image from "next/image";
 
 import styles from "../../styles/guitars.module.css";
@@ -21,8 +22,27 @@ export const getServerSideProps = async ({ query: { guitar } }) => {
 }
 
 const Guitar = ({ guitar }) => {
+    
+    const amountRef = useRef();
 
-    const { name, description, image, price } = guitar[0].attributes;
+    const { name, description, image, price, id } = guitar[0].attributes;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (Number(amountRef.current.value) === 0) {
+            alert('You must select an amount');
+            return;
+        }
+
+        const selectedGuitar = {
+            id,
+            image: image.data.attributes.url,
+            name,
+            price,
+            amount: Number(amountRef.current.value),
+        };
+    }
 
     return (
         <Layout title={`GuitarLA - Guitar ${guitar}`} description={description} >
@@ -33,9 +53,9 @@ const Guitar = ({ guitar }) => {
                     <p className={styles.description}>{description}</p>
                     <p className={styles.price}>${price}</p>
 
-                    <form action="" className={styles.form} >
+                    <form action="" className={styles.form} onSubmit={handleSubmit}>
                         <label htmlFor="amount">Amount:</label>
-                        <select name="" id="amount">
+                        <select name="" id="amount" ref={amountRef}>
                             <option value="0">-- SELECT --</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
