@@ -4,7 +4,7 @@ import Image from "next/image";
 import Layout from "../components/layout";
 import styles from "../styles/cart.module.css";
 
-export const Cart = ({ cart, updateAmount }) => {
+export const Cart = ({ cart, updateAmount, deleteGuitar }) => {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
@@ -45,6 +45,9 @@ export const Cart = ({ cart, updateAmount }) => {
                                         <p className={styles.price}><span>${guitar.price}</span></p>
                                         <p className={styles.subtotal}>Subtotal: <span>${guitar.price * guitar.amount}</span></p>
                                     </div>
+                                    <button className={styles.delete} type="button" onClick={() => deleteGuitar(guitar.id)}>
+                                        X
+                                    </button>
                                 </div>
                             ))
                         )}
