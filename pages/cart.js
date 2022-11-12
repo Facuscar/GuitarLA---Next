@@ -1,9 +1,18 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import Layout from "../components/layout";
 import styles from "../styles/cart.module.css";
 
 export const Cart = ({ cart, updateAmount }) => {
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        setTotal( () => {
+            return cart.reduce( (total, guitar) => total + (guitar.amount * guitar.price), 0); 
+        })
+    }, [cart]);
+
     return (
         <Layout title="GuitarLA - Shopping Cart">
             <main className="container">
@@ -42,7 +51,7 @@ export const Cart = ({ cart, updateAmount }) => {
                     </div>
                     <aside className={styles.resume}>
                         <h3>Purchase resume</h3>
-                        <p>Total: </p>
+                        <p>Total: {total}</p>
                     </aside>
                 </div>
             </main>
