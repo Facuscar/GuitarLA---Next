@@ -3,10 +3,15 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState(typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem('cart')) || []) : null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
+    
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []);
 
   const addToCart = (guitar) => {
     setCart((cart) => {
@@ -40,7 +45,8 @@ function MyApp({ Component, pageProps }) {
       });
   }
 
-  return <Component {...pageProps} cart={cart } addToCart={addToCart} deleteGuitar={deleteGuitar} updateAmount={updateAmount} />
+  return isLoaded ? <Component {...pageProps} cart={cart } addToCart={addToCart} deleteGuitar={deleteGuitar} updateAmount={updateAmount} />
+                  : null
 }
 
 export default MyApp
